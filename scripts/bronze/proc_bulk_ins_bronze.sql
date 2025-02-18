@@ -43,8 +43,8 @@ BEGIN
 
         	SET @start_time = GETDATE();
 		PRINT 'Loading CRM Tables..';
-		TRUNCATE TABLE bronze.crm_cost_info;
-		BULK INSERT bronze.crm_cost_info
+		TRUNCATE TABLE bronze.crm_cust_info;
+		BULK INSERT bronze.crm_cust_info
 		FROM '/var/opt/mssql/datasets/source_crm/cust_info.csv' -- on mac we need to mount our datasets inside the docker container to be able to read from it 
 		WITH (
 			FIRSTROW = 2,

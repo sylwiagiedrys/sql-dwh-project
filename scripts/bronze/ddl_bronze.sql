@@ -9,9 +9,9 @@ Script Purpose:
 ===============================================================================
 */
 
-IF OBJECT_ID('bronze.crm_cost_info', 'U') IS NOT NULL
-	DROP TABLE bronze.crm_cost_info;
-CREATE TABLE bronze.crm_cost_info (
+IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
+	DROP TABLE bronze.crm_cust_info;
+CREATE TABLE bronze.crm_cust_info (
 	cst_id INT,
 	cst_key VARCHAR(50),
 	cst_firstname VARCHAR(50),

@@ -41,7 +41,7 @@ BEGIN
 		PRINT 'Loading Bronze Layer..';
 		PRINT '================================================';
 
-        SET @start_time = GETDATE();
+        	SET @start_time = GETDATE();
 		PRINT 'Loading CRM Tables..';
 		TRUNCATE TABLE bronze.crm_cost_info;
 		BULK INSERT bronze.crm_cost_info
@@ -72,7 +72,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT 'Load Time: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS VARCHAR) + ' seconds';
-        PRINT '------------------------------------------------';       
+        	PRINT '------------------------------------------------';       
 		SET @start_time = GETDATE();
 		PRINT 'Loading ERP Tables..';
 		TRUNCATE TABLE bronze.erp_cust_az12;
@@ -105,10 +105,10 @@ BEGIN
 		SET @end_time = GETDATE();
 		PRINT 'Load Time: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS VARCHAR) + ' seconds';
     
-    PRINT '================================================';
+    		PRINT '================================================';
 		SET @batch_end_time = GETDATE();
 		PRINT 'Total Bronze Layer Load Time: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) AS VARCHAR) + ' seconds';
-    PRINT '================================================';
+    		PRINT '================================================';
 
 	END TRY
 	BEGIN CATCH
